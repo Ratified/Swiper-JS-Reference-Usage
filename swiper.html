@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiper JS Example</title>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!-- Your custom styles -->
+    <style>
+        body{
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .swiper-container {
+            position: relative; /* Make sure the swiper container establishes a stacking context */
+            z-index: 1 !important; /* Set an appropriate z-index for the swiper container */
+        }
+          
+          /* Slides inside the swiper container */
+        .swiper-slide {
+            position: relative;
+            z-index: 2 !important; /* Set a higher z-index for the slides to ensure they stack above other elements */
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            background-color: #000;
+            padding: 2rem;
+            color: #f5f5f5;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Your Swiper HTML structure goes here -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="card swiper-slide">
+                <img src="https://picsum.photos/200/300" alt="">
+                <h2>Card 1</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+            </div>
+            <div class="card swiper-slide">
+                <img src="https://picsum.photos/200/300" alt="">
+                <h2>Card 2</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+            </div>
+            <div class="card swiper-slide">
+                <img src="https://picsum.photos/200/300" alt="">
+                <h2>Card 3</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+            </div>
+            <div class="card swiper-slide">
+                <img src="https://picsum.photos/200/300" alt="">
+                <h2>Card 4</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+            </div>
+            <div class="card swiper-slide">
+                <img src="https://picsum.photos/200/300" alt="">
+                <h2>Card 5</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <!--<div class="swiper-pagination"></div>-->
+        <!-- Add Navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Your custom scripts -->
+    <script>
+        // Initialize Swiper
+        var swiper = new Swiper('.swiper-container', {
+            breakpoints: {
+                1200: {
+                    slidesPerView: 2.5,
+                    spaceBetween: 5,
+                },
+        
+                740: {
+                    slidesPerView: 1,
+                    spaceBetween: 5,
+                },
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        });
+    </script>
+</body>
+</html>
